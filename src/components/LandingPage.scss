@@ -1,0 +1,104 @@
+//This stylesheet also styles the NavBar component
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+//media queries
+//for mobiles
+@media screen and (max-width: 767px) and (min-width: 320px) {
+	//NavBar styles starts
+	.nav_bar {
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.brand {
+			.brand_logo {
+				max-width: 200px;
+				max-height: 100px;
+			}
+		}
+		.navbar_items {
+			position: fixed;
+			left: 0;
+			top: 0;
+			transform: translate3d(-100vw, 0, 0);
+			transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+			overflow: scroll;
+			z-index: 1000;
+			width: 100vw;
+			height: 100vh;
+		}
+		.toggler {
+			border-bottom-left-radius: 100%;
+			background-color: #31326f;
+			padding: 1.2rem;
+			height: 6rem;
+			width: 5rem;
+			.line {
+				width: 25px;
+				height: 3px;
+				background-color: #fbf6f0;
+				margin: 7px;
+			}
+		}
+	}
+	//NavBar styles ends
+}
+//for ipads
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+	//NavBar styles starts
+	.nav_bar {
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.brand {
+			.brand_logo {
+				max-width: 200px;
+				max-height: 100px;
+			}
+		}
+		.navbar_items {
+			display: none;
+		}
+		.toggler {
+			.line {
+				width: 25px;
+				height: 3px;
+				background-color: #040405;
+				margin: 7px;
+			}
+		}
+	}
+	//NavBar styles ends
+}
+//for laptops and larger screen
+@media screen and (min-width: 1025px) {
+	//NavBar styles starts
+	.nav_bar {
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.toggler {
+			display: none;
+		}
+		.navbar_items {
+			padding-right: 9rem;
+			width: 50%;
+			.navigation {
+				display: flex;
+				justify-content: space-between;
+				list-style: none;
+				.navigation_item a {
+					font-size: 1.16rem;
+					font-family: "Roboto Condensed", sans-serif;
+					color: #31326f;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	//NavBar styles ends
+}
