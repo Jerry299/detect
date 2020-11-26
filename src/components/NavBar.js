@@ -5,16 +5,18 @@ import './LandingPage.scss'
 import Logo from '../img/DETECTor.svg'
 
 const NavBar = () => {
-    const [visible,setVisible] = useState(false)
+    const [visible,setVisible] = useState(false);
+
+   
+    
     return (
-        
         <div className="container-fluid wrapper">
             <div className="row">
-                <nav className="nav_bar col-sm-12 pr-0">
-                    <Link className="brand">
+                <nav className="nav_bar col-sm-12 pr-0"  >
+                    <Link className="brand" to="/">
                         <img src={Logo} alt="" className="brand_logo" />
                     </Link>
-                    <div className="toggler">
+                    <div className="toggler" >
                         <div className="line line1"></div>
                         <div className="line line2"></div>
                         <div className="line line3"></div>

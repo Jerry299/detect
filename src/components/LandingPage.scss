@@ -1,6 +1,10 @@
 //This stylesheet also styles the NavBar component
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
+.wrapper {
+	border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+
 //media queries
 //for mobiles
 @media screen and (max-width: 767px) and (min-width: 320px) {
@@ -93,12 +97,64 @@
 					font-size: 1.16rem;
 					font-family: "Roboto Condensed", sans-serif;
 					color: #31326f;
+					transition: 0.5s all;
 					&:hover {
+						padding: 10px 10px;
 						text-decoration: none;
+						&:hover a {
+							background: linear-gradient(rgb(218, 13, 13), #333);
+							-webkit-background-clip: text;
+							-webkit-text-fill-color: transparent;
+						}
 					}
 				}
 			}
 		}
 	}
 	//NavBar styles ends
+
+	//Landing page styles starts
+	.landing {
+		background-color: #231f37;
+		height: 81.3vh;
+		.row_one {
+			.svg-container {
+				.svg-wrapper {
+					background-color: #fff;
+					img {
+						max-width: 654.6197px;
+						max-height: 320px;
+					}
+				}
+			}
+			.intro {
+				color: #c9c9d0;
+				font-family: "Sansita Swashed", cursive;
+				font-size: 1.2rem;
+				line-height: 2rem;
+				letter-spacing: 0.09rem;
+				span {
+					font-size: 2rem;
+				}
+			}
+		}
+		.row_two {
+			color: #fff;
+			background-color: #393e46;
+			width: 75%;
+			margin-left: 10rem;
+			border-radius: 5px;
+			box-shadow: rgba(243, 217, 217, 0.705) 0px 3px 8px;
+			.card-item {
+				h5 {
+					color: #cfd3ce;
+					text-align: center;
+				}
+				p {
+					color: #839b97;
+				}
+			}
+		}
+	}
+	//Landing page styles ends
 }
