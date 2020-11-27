@@ -1,0 +1,63 @@
+//media queries
+@media screen and (max-width: 767px) and (min-width: 320px) {
+}
+
+//for ipads
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+
+//for laptops and larger screen
+@media screen and (min-width: 1025px) {
+	.upload-container {
+		.upload-wrapper {
+			background-color: #fff;
+			height: 20vh;
+			width: 90%;
+			margin-left: 7rem;
+			margin-top: 4rem;
+			border-radius: 5px;
+			.column-one {
+				//styling upload button
+				div {
+					[type="file"] {
+						height: 0;
+						overflow: hidden;
+						width: 0;
+					}
+
+					[type="file"] + label {
+						background: #f15d22;
+						border: none;
+						border-radius: 5px;
+						color: #fff;
+						cursor: pointer;
+						display: inline-block;
+						font-size: inherit;
+						font-weight: 500;
+						margin-bottom: 1rem;
+						outline: none;
+						padding: 1rem 50px;
+						position: relative;
+						transition: all 0.3s;
+						vertical-align: middle;
+
+						&:hover {
+							background-color: darken(#f15d22, 10%);
+						}
+
+						&.photo-label {
+							background-color: #cf6182;
+							border-radius: 50px;
+							overflow: hidden;
+
+							&:hover {
+								background-color: #ea366c;
+							}
+						}
+					}
+				}
+				//styling upload button
+			}
+		}
+	}
+}

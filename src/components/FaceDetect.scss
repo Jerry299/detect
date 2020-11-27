@@ -1,0 +1,27 @@
+//media queries
+@media screen and (max-width: 767px) and (min-width: 320px) {
+}
+
+//for ipads
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+
+//for laptops and larger screen
+@media screen and (min-width: 1025px) {
+	.face-container {
+		background: linear-gradient(to right, #fbf2f3 0%, #fbf2f3 99%);
+		height: 81.25vh;
+		.face-row {
+			.face_msg {
+				text-transform: capitalize;
+				font-size: 1.2rem;
+				margin-top: 2.5rem;
+				width: 70%;
+				text-align: center;
+				font-weight: 500;
+				margin-left: 7.5rem;
+				padding: 1.3rem;
+			}
+		}
+	}
+}

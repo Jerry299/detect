@@ -25,7 +25,7 @@ const NavBar = () => {
                         <ul className="navigation">
                             <li className="navigation_item" >
                                <NavLink exact
-                                    to="/home"
+                                    to="/face"
                                     activeStyle={{
                                     fontWeight: "bold",
                                     color: "#fd3a69"

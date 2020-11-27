@@ -101,11 +101,9 @@
 					&:hover {
 						padding: 10px 10px;
 						text-decoration: none;
-						&:hover a {
-							background: linear-gradient(rgb(218, 13, 13), #333);
-							-webkit-background-clip: text;
-							-webkit-text-fill-color: transparent;
-						}
+						background: linear-gradient(#2193b0, #6dd5ed);
+						color: #fff;
+						border-radius: 3px;
 					}
 				}
 			}
