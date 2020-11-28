@@ -4,7 +4,7 @@ import FileUploads from './FileUploads'
 
 const FaceDetect = () => {
     const [image,setImage] = useState("http://dummyimage.com/600x400/000/00ffd5.png");
-    const [imageName,setImageName] = useState("");
+    
 
     console.log(image)
 
@@ -15,7 +15,13 @@ const FaceDetect = () => {
         reader.onload =(evt) => {
             setImage(evt.target.result)
         }
-        // reader.onloadend = () => {
+         reader.readAsDataURL(e.target.files[0])
+    }
+
+    // const handleImage = () => {
+    //     setImage("https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg")
+    // }
+    // reader.onloadend = () => {
         //     console.log(reader.readyState);
         //     if(reader.readyState === 2){
         //         setImage(reader.result)
@@ -23,13 +29,8 @@ const FaceDetect = () => {
         //     };
         //     reader.readAsDataURL(e.target.files[0])
         // }
-         reader.readAsDataURL(e.target.files[0])
-    }
 
-    // const handleImage = () => {
-    //     setImage("https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg")
-    // }
-    
+
     return (
         <div className="container-fluid face-container">
             <div className="face-row">
@@ -41,8 +42,8 @@ const FaceDetect = () => {
                     <FileUploads action={handleImage}/>
                 </div>
                 <div className="preview">
-                    Name= {imageName}
-                    <img src={image} alt="" className="img" />
+                    <img src={image} alt="" className="img" id="image"/>
+                    <div className="bounding_box"></div>
                 </div>
             </div>
         </div>
