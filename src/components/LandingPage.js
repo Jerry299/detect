@@ -4,9 +4,7 @@ import AISvg from '../img/undraw_AI.svg'
 
 
 const LandingPage = () => {
-    const  sayTwo = () => {
-        console.log(2)
-    }
+   
     return (
         <div className="container-fluid landing">
             <div className="row row_one">

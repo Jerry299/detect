@@ -5,7 +5,7 @@ import './LandingPage.scss'
 import Logo from '../img/DETECTor.svg'
 
 const NavBar = () => {
-    const [visible,setVisible] = useState(false);
+    // const [visible,setVisible] = useState(false);
 
    
     
