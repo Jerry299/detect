@@ -6,7 +6,16 @@ import './FaceDetect.scss'
 const FaceDetect = ({clarifai}) => {
     const [image,setImage] = useState("http://dummyimage.com/600x400/000/00ffd5.png");
 
-
+    const onDetectClick = () => {
+        console.log("clarifai detects")
+        clarifai.models.predict("d02b4508df58432fbb84e800597b8959",[image])
+            .then((response) => {
+                console.log(response)
+            })
+            .catch(err => {
+                console.log("error",err)
+            })
+    }
   
 
      const handleImage = (e) => {
@@ -32,7 +41,7 @@ const FaceDetect = ({clarifai}) => {
                             </label>
                         </div>
                         <div className="submit-button">
-                            <button className="butn">DETECT</button>
+                            <button className="butn" onClick={onDetectClick}>DETECT</button>
                         </div>
                     </div>
                     

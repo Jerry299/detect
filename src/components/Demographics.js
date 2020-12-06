@@ -5,8 +5,9 @@ import FileUploads from './FileUploads'
 const Demographics = () => {
     const [image,setImage] = useState("http://dummyimage.com/600x400/000/00ffd5.png");
 
-    const handleImage = (e) => {
-        console.log(e.target.value)
+    
+     const handleImage = (e) => {
+        setImage(e.target.value)
     }
 
     return (

@@ -5,15 +5,18 @@ import LandingPage from './components/LandingPage'
 import NavBar from './components/NavBar'
 import FaceDetect from './components/FaceDetect'
 import VehicleDetect from './components/VehicleDetect'
-import Demographics from './components/Demographics'
+import Demographics from './components/Demographics';
 
 import Clarifai from 'clarifai';
+
+const key = process.env.REACT_APP_API_KEY
 const app = new Clarifai.App({
-  apiKey: "afd09cae99254c9b80795f6ece7ee0b5"
+  apiKey: key
 })
 
 
 const App = () => {
+ 
   return (
     <Router>
       <NavBar/>

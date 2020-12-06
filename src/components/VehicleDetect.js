@@ -5,13 +5,8 @@ import FileUploads from './FileUploads'
 const VehicleDetect = () => {
     const [image,setImage] = useState("http://dummyimage.com/600x400/000/00ffd5.png");
 
-    const handleImage = (e) => {
-        const reader = new FileReader();
-        console.log(e.target.files[0]);
-        reader.onload =(evt) => {
-            setImage(evt.target.result)
-        }
-         reader.readAsDataURL(e.target.files[0])
+     const handleImage = (e) => {
+        setImage(e.target.value)
     }
 
 
@@ -26,7 +21,10 @@ const VehicleDetect = () => {
                     
                     <div className="image_form_container">
                         <div className="image-form">
-                            <input type="text" autoComplete="false" name="image-url" required/>
+                            <input type="text" autoComplete="false" name="image-url" 
+                            required
+                            onChange={handleImage}
+                            />
                             <label htmlFor="image-url" className="label-name">
                                 <span className="content-name">Enter Your Image Address/URL Here.</span>
                             </label>
