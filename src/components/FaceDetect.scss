@@ -9,13 +9,14 @@
 //for laptops and larger screen
 @media screen and (min-width: 1025px) {
 	.face-container {
-		background: linear-gradient(to right, #fbf2f3 0%, #fbf2f3 99%);
-		height: 81.25vh;
+		background: linear-gradient(to right, #fbf2f3 0%, #dbe4fa 99%);
+		height: 81.4vh;
+		overflow: hidden;
 		.face-row {
 			display: flex;
 			.upload {
 				width: 45%;
-				margin-right: 7rem;
+				margin-left: 7rem;
 				.face_msg {
 					text-transform: capitalize;
 					font-size: 1.2rem;
@@ -26,22 +27,111 @@
 					margin-left: 7.5rem;
 					padding: 1.3rem;
 				}
+				.warning {
+					color: rgb(247, 91, 91);
+					text-align: center;
+					margin-left: 12rem;
+					padding: 1.3rem;
+					font-weight: 500;
+				}
+				.image_form_container {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					padding-top: 5rem;
+					margin-left: 3rem;
+					flex-direction: column;
+				}
+				.image-form {
+					font-family: "Roboto Condensed", sans-serif;
+					position: relative;
+					height: 50px;
+					width: 80%;
+					overflow: hidden;
+					input {
+						width: 100%;
+						height: 100%;
+						color: #5aa469;
+						border: none;
+						outline: none;
+						padding-top: 20px;
+						&:focus + .label-name .content-name,
+						&:valid + .label-name .content-name {
+							transform: translateY(-100%);
+							font-size: 15px;
+							color: #28df99;
+							font-weight: 600;
+						}
+						&:focus + .label-name::after,
+						&:valid + .label-name::after {
+							transform: translateX(0%);
+						}
+					}
+					label {
+						position: absolute;
+						// bottom: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						pointer-events: none;
+						border-bottom: 1px solid #222831;
+						&::after {
+							content: "";
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							border-bottom: 3px solid #28abb9;
+							left: 0;
+							bottom: -1px;
+							transform: translateX(-100%);
+							transition: all 0.3s ease-in-out;
+						}
+						.content-name {
+							position: absolute;
+							bottom: 5px;
+							left: 0;
+							transition: all 0.3s ease-in;
+							padding: 0.1rem;
+						}
+					}
+				}
+				.submit-button {
+					padding: 2rem;
+					.butn {
+						width: 250px;
+						border: 2px solid #28df99;
+						padding: 10px 12px;
+						background-color: #fff;
+						outline: none;
+						border-radius: 7px;
+						letter-spacing: 1px;
+						transition: all 0.25 ease-in-out;
+						font-weight: 700;
+						font-size: 1.2rem;
+						&:hover {
+							background-color: #28df99;
+							color: #fff;
+						}
+						&:active {
+							box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+						}
+					}
+				}
 			}
 			.preview {
-				margin: 0.3rem;
-				margin-top: 3rem;
-				padding: 3rem;
-				margin-left: 3rem;
+				margin-top: 2.3rem;
+				padding: 2rem;
+				margin-left: 7rem;
 				position: relative;
 				.img {
-					width: 350px;
+					width: 380px;
 					height: auto;
+					border-radius: 3px;
+				}
+				.flash-msgs {
 					position: absolute;
 					top: 0;
-					right: 30px;
-					left: 0;
-					bottom: 30px;
-					border-radius: 3px;
+					left: 50%;
 				}
 			}
 		}

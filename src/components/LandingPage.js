@@ -10,7 +10,7 @@ const LandingPage = () => {
             <div className="row row_one">
                 <div className="col-sm-12 col-md-6 svg-container">
                    <div className="svg-wrapper">
-                        <img src={AISvg} alt="" className=""svg_one/>
+                        <img src={AISvg} alt="" className="svg_one"/>
                    </div>
                 </div>
                 <div className="col-sm-12 col-md-6 d-flex align-items-center p-4">

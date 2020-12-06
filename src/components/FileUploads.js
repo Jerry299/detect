@@ -1,7 +1,7 @@
 import React from 'react';
 import './FileUploads.scss';
 
-const FileUploads = ({action}) => {
+const FileUploads = ({action,detect}) => {
     return (
         <div className="container upload-container">
             <div className="row upload-wrapper">
@@ -15,7 +15,7 @@ const FileUploads = ({action}) => {
                     </div>
                 </div>
                 <div className="col-md-4 column-two">
-                    <div className="button">
+                    <div className="button" onClick={detect} >
                         DETECT
                     </div>
                 </div>

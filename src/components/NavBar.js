@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {NavLink,Link,} from 'react-router-dom';
 
 import './LandingPage.scss'
@@ -34,7 +34,7 @@ const NavBar = () => {
                             </li>
                             <li className="navigation_item">
                                 <NavLink exact
-                                    to="/home1"
+                                    to="/vehicle"
                                     activeStyle={{
                                     fontWeight: "bold",
                                     color: "#fd3a69"
@@ -43,7 +43,7 @@ const NavBar = () => {
                             </li>
                             <li className="navigation_item">
                                 <NavLink exact
-                                    to="/home2"
+                                    to="/demo"
                                     activeStyle={{
                                     fontWeight: "bold",
                                     color: "#fd3a69"
