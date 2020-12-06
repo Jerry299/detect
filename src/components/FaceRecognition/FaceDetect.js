@@ -1,26 +1,54 @@
 import React,{useState} from 'react';
-import './FaceDetect.scss'
+import '.././FaceDetect.scss';
+import './Recognition.css';
 
 
 
 const FaceDetect = ({clarifai}) => {
     const [image,setImage] = useState("http://dummyimage.com/600x400/000/00ffd5.png");
+    const [box,setBox] = useState({});
+    
 
     const onDetectClick = () => {
         console.log("clarifai detects")
         clarifai.models.predict("d02b4508df58432fbb84e800597b8959",[image])
             .then((response) => {
-                console.log(response)
+               displayFaceBox(calculateFaceLocation(response))
             })
             .catch(err => {
-                console.log("error",err)
+                console.log("error======",err)
             })
     }
   
+    console.log(box,"============box");
 
-     const handleImage = (e) => {
+
+    const handleImage = (e) => {
         setImage(e.target.value)
     }
+
+    const calculateFaceLocation = (data) => {
+        const clarifaiData = data.outputs[0].data.regions[0].region_info.bounding_box
+        const faceImage = document.getElementById("face_image")
+        const width = Number(faceImage.width)
+        const height = Number(faceImage.height)
+        return {
+                leftCol: clarifaiData.left_col * width,
+                topRow: clarifaiData.top_row * height,
+                rightCol: width - clarifaiData.right_col * width,
+                bottomRow: height - clarifaiData.bottom_row * height
+            };
+    }
+    const displayFaceBox = (box) => {
+        setBox(box)
+    }
+    const boxStyle = {
+        top: box.topRow,
+        left: box.leftCol,
+        bottom: box.bottomRow,
+        right: box.rightCol
+    }
+
     return (
         <div className="container-fluid face-container">
             <div className="face-row">
@@ -48,8 +76,8 @@ const FaceDetect = ({clarifai}) => {
                 </div>
                 <div className="preview">
                     <small className="flash-msgs"></small>
-                    <img src={image} alt="" className="img" id="image"/>
-                    <div className="bounding_box"></div>
+                    <img src={image} alt="" className="img" id="face_image" />
+                    <div className="bounding_box" style={boxStyle}></div>
                 </div>
             </div>
         </div>

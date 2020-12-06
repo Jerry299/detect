@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import './FaceDetect.scss'
-import FileUploads from './FileUploads'
+import '.././FaceDetect.scss'
+
 
 const VehicleDetect = () => {
     const [image,setImage] = useState("http://dummyimage.com/600x400/000/00ffd5.png");

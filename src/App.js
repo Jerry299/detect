@@ -3,9 +3,9 @@ import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 import './App.css'
 import LandingPage from './components/LandingPage'
 import NavBar from './components/NavBar'
-import FaceDetect from './components/FaceDetect'
-import VehicleDetect from './components/VehicleDetect'
-import Demographics from './components/Demographics';
+import FaceDetect from './components/FaceRecognition/FaceDetect'
+import VehicleDetect from './components/VehicleRecognition/VehicleDetect'
+import Demographics from './components/DemoRecognition/Demographics';
 
 import Clarifai from 'clarifai';
 
